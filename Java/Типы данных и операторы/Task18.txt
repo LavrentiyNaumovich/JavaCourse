@@ -1,0 +1,8 @@
+  while (true) {
+            System.out.println("while");
+        }
+
+
+   do {
+            System.out.println("do-while");
+        } while (true);    

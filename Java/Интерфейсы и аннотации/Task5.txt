@@ -1,0 +1,63 @@
+Аннотация @Override используется для явного указания, что метод в классе переопределяет метод родительского класса или интерфейса. 
+class Animal {
+    void sound() {
+        System.out.println("Animal makes a sound");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Dog dog = new Dog();
+        dog.sound();  // Выведет: Dog barks
+    }
+}
+Аннотация помогает избежать ошибок, например, если метод в подклассе не совпадает по имени или параметрам с методом в родительском классе.
+
+Аннотация @Deprecated помечает метод, класс или поле как устаревшее, 
+то есть они больше не рекомендуется использовать, так как они могут быть удалены в будущих версиях. 
+class OldClass {
+    @Deprecated
+    void oldMethod() {
+        System.out.println("This method is deprecated.");
+    }
+    
+    void newMethod() {
+        System.out.println("This is the new method.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        OldClass oldClass = new OldClass();
+        oldClass.oldMethod();  // Предупреждение о том, что метод устарел
+        oldClass.newMethod();
+    }
+}
+Аннотация предупреждает о том, что использование данного метода/класса не рекомендуется, 
+и помогает использовать более актуальные и поддерживаемые решения.
+
+Аннотация @SuppressWarnings используется для подавления предупреждений компилятора.
+import java.util.ArrayList;
+
+public class Main {
+    @SuppressWarnings("unchecked")
+    public static void main(String[] args) {
+        // Использование коллекции без указания типа вызывает предупреждение о небезопасном типе
+        ArrayList list = new ArrayList();
+        list.add("Hello");
+        list.add(123);
+        
+        // SuppressWarnings подавляет предупреждение о небезопасном типе
+        for (Object obj : list) {
+            System.out.println(obj);
+        }
+    }
+}
+Аннотация позволяет избежать излишних предупреждений в коде, например, когда вы сознательно используете небезопасные операции.

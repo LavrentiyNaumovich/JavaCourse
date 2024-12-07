@@ -1,0 +1,18 @@
+1. Инициализация в конструкторе:
+public class A {
+    public final int a;
+    public A(int value) {
+        a = value;  
+    }
+}
+2. Инициализация при объявлении:
+public class A {
+    public final int a = 10; 
+}
+3. Инициализация через блок инициализации: 
+public class A {
+    public final int a;
+    {
+        a = 20;  // Инициализация через блок инициализации (для экземпляра)
+    }
+}

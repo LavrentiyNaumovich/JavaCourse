@@ -1,0 +1,43 @@
+1.Вызов метода внутри самого класса A:
+public class A {
+    public static int a = 1;
+    public static int b;
+
+    public static void printVars() {
+        System.out.println(a);
+        System.out.println(b);
+    }
+
+    public static void main(String[] args) {
+        // Вызов метода printVars внутри самого класса A
+        printVars();
+    }
+}
+2.Вызов метода из другого класса в том же пакете:
+public class B {
+    public static void main(String[] args) {
+        A.printVars();  
+    }
+}
+3.Вызов метода из другого пакета:
+package package2;
+import package1.A; 
+public class B {
+    public static void main(String[] args) {
+        A.printVars();
+    }
+}
+4.Вызов метода через экземпляр класса:
+public class B {
+    public static void main(String[] args) {
+        A aObject = new A();
+        aObject.printVars();
+    }
+}
+
+5.Вызов метода из другого класса с наследованием:
+class B extends A {
+    public static void main(String[] args) {
+        B.printVars();
+    }
+}
